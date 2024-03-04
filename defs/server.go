@@ -217,6 +217,7 @@ func (s *Server) Download(silent bool, useBytes, useMebi bool, requests int, chu
 	req.URL.RawQuery = q.Encode()
 	req.Header.Set("User-Agent", UserAgent)
 	req.Header.Set("Accept-Encoding", "identity")
+	req.Header.Set("Cookie", "ustc=1")
 
 	downloadDone := make(chan struct{}, requests)
 
